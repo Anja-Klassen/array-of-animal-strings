@@ -54,17 +54,24 @@ const animalsSortedAlphabetically = animalStrings.slice().sort((a, b) => {
 });
 
 // Hint: Guess what? There is a string method called `endsWith()`.
-const anyAnimalEndsWithLetterZ = animalStrings.find((animal) =>
+const anyAnimalEndsWithLetterZ = animalStrings.includes((animal) =>
   animal.endsWith("z")
 );
 
-const everyAnimalHasMoreThanTwoLetters = null;
+console.log(anyAnimalEndsWithLetterZ);
+
+const everyAnimalHasMoreThanTwoLetters = animalStrings.every(
+  (animal) => animal.length > 2
+);
 
 // Hint: There are several ways to go here. Let's focus on two options:
 // Option 1: Concatenate all characters with `reduce()` and check for the `length` property of the result.
 // Option 2: Use `map()` to create an array with the length values of all strings,
 // 				then sum them up with `reduce()` (keyword: method chaining)
-const sumOfAllAnimalCharacters = null;
+const sumOfAllAnimalCharacters = animalStrings.reduce(
+  (sum, animal) => sum + animal.length,
+  0
+);
 
 export {
   hippoExists,
